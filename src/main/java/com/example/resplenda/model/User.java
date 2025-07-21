@@ -1,11 +1,15 @@
 package com.example.resplenda.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 
 @Entity
+@Table(name = "app_user")
 public class User {
 @Id
 @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,6 +17,7 @@ private Long id;
 
 private String email;
 private String username;
+@JsonIgnore 
 private String password;
 
 	public User() {//no args for database to actually use

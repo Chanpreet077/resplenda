@@ -26,4 +26,10 @@ public class UserController {
     public User getUserByUsername(@PathVariable String username) {
     	return userService.getUserByUsername(username);
     }
+    
+    
+    @GetMapping("/test")
+    public String test() {
+        return "API is working!";
+    }
 }
